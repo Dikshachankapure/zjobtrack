@@ -1,0 +1,19 @@
+{
+	"Machines": [{
+		"MachineId": "M1",
+		"MachineName": "Machine 1",
+		"MachineSerialNo": "123",
+		"MachineDescription": "Test Description 1"
+	}, {
+		"MachineId": "M2",
+		"MachineName": "Machine 2",
+		"MachineSerialNo": "456",
+		"MachineDescription": "Test Description 2"
+	}, {
+		"MachineId": "M3",
+		"MachineName": "Machine 3",
+		"MachineSerialNo": "789",
+		"MachineDescription": "Test Description 3"
+	}]
+
+}

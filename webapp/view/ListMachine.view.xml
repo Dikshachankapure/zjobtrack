@@ -1,0 +1,72 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:tnt="sap.tnt" xmlns="sap.m"
+	controllerName="project.ZTrackJob.controller.ListMachine" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="Machines" navButtonPress="_onNavBack" showNavButton="true">
+				<content>
+					<tnt:ToolHeader>
+						<Button text="Dashboard" icon="sap-icon://bbyd-dashboard" type="Transparent" press="_onPressMenu">
+							<layoutData>
+								<OverflowToolbarLayoutData priority="Low"/>
+							</layoutData>
+						</Button>
+						<Button text="Manage Machine" icon="sap-icon://machine" type="Transparent" press="_onPressMenu">
+							<layoutData>
+								<OverflowToolbarLayoutData priority="Low"/>
+							</layoutData>
+						</Button>
+						<Button text="Manage Jobs" icon="sap-icon://legend" type="Transparent" press="_onPressMenu">
+							<layoutData>
+								<OverflowToolbarLayoutData priority="Low"/>
+							</layoutData>
+						</Button>
+						<Button text="Track Jobs" icon="sap-icon://inspection" type="Transparent" press="_onPressMenu">
+							<layoutData>
+								<OverflowToolbarLayoutData priority="Low"/>
+							</layoutData>
+						</Button>
+					</tnt:ToolHeader>
+					<Table id="tblMachines" inset="false" visible="true" class="sapUiResponsiveMargin" growing="true" growingScrollToLoad="true" width="auto"
+						growingThreshold="10" items="{path:'/Machines'}" noDataText="{i18n>nodatafound}">
+						<headerToolbar>
+							<Toolbar>
+								<content>
+									<Title text="List of Machines" level="H2"/>
+									<ToolbarSpacer/>
+									<SearchField liveChange="onSearch" width="50%"/>
+									<!--<Input id="txtSearch" width="30%" type="Text"/>
+									<Button id="btnSearch" icon="sap-icon://search" press="onSearch" type="Accept" tooltip="Add Driver"/>-->
+									<Button id="btnAdd" icon="sap-icon://add" press="onAdd" type="Accept" tooltip="Add Machine"/>
+								</content>
+							</Toolbar>
+						</headerToolbar>
+						<columns>
+							<Column demandPopin="true" visible="false">
+								<Text text="Id"/>
+							</Column>
+							<Column demandPopin="true">
+								<Text text="Machine Name"/>
+							</Column>
+							<Column demandPopin="true" minScreenWidth="Tablet">
+								<Text text="Serial No"/>
+							</Column>
+							<Column demandPopin="true">
+								<Text text=""/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem vAlign="Middle" type="Navigation" press="onEdit">
+								<cells>
+									<Text text="{MachineId}" visible="false"/>
+									<Text text="{MachineName}"/>
+									<Text text="{MachineSerialNo}"/>
+									<Button id="btnDelete" icon="sap-icon://delete" press="onDelete" type="Reject" tooltip="Delete"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

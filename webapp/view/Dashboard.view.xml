@@ -1,0 +1,204 @@
+<mvc:View controllerName="project.ZTrackJob.controller.Dashboard" xmlns:tnt="sap.tnt" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:grid="sap.ui.layout.cssgrid" xmlns:f="sap.f" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<tnt:ToolHeader>
+							<Button text="Dashboard" icon="sap-icon://bbyd-dashboard" type="Transparent" press="_onPressMenu">
+								<layoutData>
+									<OverflowToolbarLayoutData priority="Low"/>
+								</layoutData>
+							</Button>
+							<Button text="Manage Machine" icon="sap-icon://machine" type="Transparent" press="_onPressMenu">
+								<layoutData>
+									<OverflowToolbarLayoutData priority="Low"/>
+								</layoutData>
+							</Button>
+							<Button text="Manage Jobs" icon="sap-icon://legend" type="Transparent" press="_onPressMenu">
+								<layoutData>
+									<OverflowToolbarLayoutData priority="Low"/>
+								</layoutData>
+							</Button>
+							<Button text="Track Jobs" icon="sap-icon://inspection" type="Transparent" press="_onPressMenu">
+								<layoutData>
+									<OverflowToolbarLayoutData priority="Low"/>
+								</layoutData>
+							</Button>
+						</tnt:ToolHeader>
+						<GenericTile id="totalmachines" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Machines" subheader=""
+							press="_onPressTiles">
+							<TileContent unit="" footer="">
+								<NumericContent id="countMachines" icon="sap-icon://machine"/>
+							</TileContent>
+						</GenericTile>
+						<GenericTile id="totaljobs" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Jobs" subheader="" press="_onPressTiles">
+							<TileContent unit="" footer="">
+								<NumericContent id="countJobs" icon="sap-icon://legend"/>
+							</TileContent>
+						</GenericTile>
+						<f:GridList id="gridList1">
+							<f:customLayout>
+								<grid:GridBoxLayout boxMinWidth="17rem"/>
+							</f:customLayout>
+							<CustomListItem>
+								<VBox height="100%">
+									<VBox class="sapUiSmallMargin">
+										<Panel busyIndicatorDelay="0" expandable="true" expanded="true" headerText="Top Ongoing Jobs" width="auto" class="sapUiResponsiveMargin">
+											<content>
+												<Table id="tblOngoingJobs" inset="false" visible="true" class="sapUiResponsiveMargin" width="auto" items="{path:'/Jobs'}"
+													noDataText="{i18n>nodatafound}">
+													<columns>
+														<Column demandPopin="true" visible="false">
+															<Text text="Job Id"/>
+														</Column>
+														<Column demandPopin="true">
+															<Text text="Empoyee Name"/>
+														</Column>
+														<Column demandPopin="true" minScreenWidth="Tablet">
+															<Text text="Machine Name"/>
+														</Column>
+														<Column demandPopin="true" minScreenWidth="Tablet">
+															<Text text="Job Title"/>
+														</Column>
+													</columns>
+													<items>
+														<ColumnListItem vAlign="Middle" type="Navigation" press="_onEditJob">
+															<cells>
+																<Text text="{JobId}" visible="false"/>
+																<Text text="{EmployeeName}"/>
+																<Text text="{MachineName}"/>
+																<Text text="{JobTitle}"/>
+															</cells>
+														</ColumnListItem>
+													</items>
+												</Table>
+											</content>
+										</Panel>
+									</VBox>
+								</VBox>
+							</CustomListItem>
+							<CustomListItem>
+								<VBox height="100%">
+									<VBox class="sapUiSmallMargin">
+										<Panel busyIndicatorDelay="0" expandable="true" expanded="true" headerText="Top Upcoming Jobs" width="auto" class="sapUiResponsiveMargin">
+											<content>
+												<Table id="tblUpcomingJobs" inset="false" visible="true" class="sapUiResponsiveMargin" width="auto" items="{path:'/Jobs'}"
+													noDataText="{i18n>nodatafound}">
+													<columns>
+														<Column demandPopin="true" visible="false">
+															<Text text="Job Id"/>
+														</Column>
+														<Column demandPopin="true">
+															<Text text="Empoyee Name"/>
+														</Column>
+														<Column demandPopin="true" minScreenWidth="Tablet">
+															<Text text="Machine Name"/>
+														</Column>
+														<Column demandPopin="true" minScreenWidth="Tablet">
+															<Text text="Job Title"/>
+														</Column>
+													</columns>
+													<items>
+														<ColumnListItem vAlign="Middle" type="Navigation" press="_onEditJob">
+															<cells>
+																<Text text="{JobId}" visible="false"/>
+																<Text text="{EmployeeName}"/>
+																<Text text="{MachineName}"/>
+																<Text text="{JobTitle}"/>
+															</cells>
+														</ColumnListItem>
+													</items>
+												</Table>
+											</content>
+										</Panel>
+									</VBox>
+								</VBox>
+							</CustomListItem>
+						</f:GridList>
+						<f:GridList id="gridList2">
+							<f:customLayout>
+								<grid:GridBoxLayout boxMinWidth="17rem"/>
+							</f:customLayout>
+							<CustomListItem>
+								<VBox height="100%">
+									<VBox class="sapUiSmallMargin">
+										<Panel busyIndicatorDelay="0" expandable="true" expanded="true" headerText="Top Completed Jobs" width="auto" class="sapUiResponsiveMargin">
+											<content>
+												<Table id="tblCompletedJobs" inset="false" visible="true" class="sapUiResponsiveMargin" width="auto" items="{path:'/Jobs'}"
+													noDataText="{i18n>nodatafound}">
+													<columns>
+														<Column demandPopin="true" visible="false">
+															<Text text="Job Id"/>
+														</Column>
+														<Column demandPopin="true">
+															<Text text="Empoyee Name"/>
+														</Column>
+														<Column demandPopin="true" minScreenWidth="Tablet">
+															<Text text="Machine Name"/>
+														</Column>
+														<Column demandPopin="true" minScreenWidth="Tablet">
+															<Text text="Job Title"/>
+														</Column>
+													</columns>
+													<items>
+														<ColumnListItem vAlign="Middle" type="Navigation" press="_onEditJob">
+															<cells>
+																<Text text="{JobId}" visible="false"/>
+																<Text text="{EmployeeName}"/>
+																<Text text="{MachineName}"/>
+																<Text text="{JobTitle}"/>
+															</cells>
+														</ColumnListItem>
+													</items>
+												</Table>
+											</content>
+										</Panel>
+									</VBox>
+								</VBox>
+							</CustomListItem>
+							<CustomListItem>
+								<VBox height="100%">
+									<VBox class="sapUiSmallMargin">
+										<Panel busyIndicatorDelay="0" expandable="true" expanded="true" headerText="Top Cancelled Jobs" width="auto" class="sapUiResponsiveMargin">
+											<content>
+												<Table id="tblCancelledJobs" inset="false" visible="true" class="sapUiResponsiveMargin" width="auto" items="{path:'/Jobs'}"
+													noDataText="{i18n>nodatafound}">
+													<columns>
+														<Column demandPopin="true" visible="false">
+															<Text text="Job Id"/>
+														</Column>
+														<Column demandPopin="true">
+															<Text text="Empoyee Name"/>
+														</Column>
+														<Column demandPopin="true" minScreenWidth="Tablet">
+															<Text text="Machine Name"/>
+														</Column>
+														<Column demandPopin="true" minScreenWidth="Tablet">
+															<Text text="Job Title"/>
+														</Column>
+													</columns>
+													<items>
+														<ColumnListItem vAlign="Middle" type="Navigation" press="_onEditJob">
+															<cells>
+																<Text text="{JobId}" visible="false"/>
+																<Text text="{EmployeeName}"/>
+																<Text text="{MachineName}"/>
+																<Text text="{JobTitle}"/>
+															</cells>
+														</ColumnListItem>
+													</items>
+												</Table>
+											</content>
+										</Panel>
+									</VBox>
+								</VBox>
+							</CustomListItem>
+						</f:GridList>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

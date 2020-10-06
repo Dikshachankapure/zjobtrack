@@ -1,0 +1,35 @@
+{
+    "application": {
+        "id": "",
+        "title": "project.ZTrackJob.ZTrackJob",
+        "description": "Job Tracking",
+        "type": "SAP_UI5_Component",
+        "componentUrl": "/",
+        "appUrl": "#ZTrackJob-Display",
+        "navigationComponentName": "project.ZTrackJob",
+        "intentSemanticObject": "ZTrackJob",
+        "intentAction": "Display",
+        "html5ApplicationName": "ztrackjob",
+        "HCPParentApplicationName": ""
+    },
+    "assignment": {
+        "groups": [
+            "c801cfd5-db31-4325-b0ef-962ed9ad5469-1559907793599"
+        ],
+        "contentPackages": [
+            "526df20b-190b-470b-880f-397727c8a6bd-1559907720691"
+        ],
+        "categories": []
+    },
+    "tile": {
+        "type": "StaticTile",
+        "title": "Job Tracking",
+        "subtitle": "For Company",
+        "searchKeywords": "Job Tracking,For Company",
+        "displayIconUrl": "sap-icon://approvals",
+        "displayInfoText": "",
+        "size": "1x1",
+        "serviceURL": "",
+        "refreshInterval": ""
+    }
+}

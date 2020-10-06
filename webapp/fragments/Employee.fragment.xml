@@ -1,0 +1,6 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog title="{i18n>select}" items="{ path: '/Employees' }" noDataText="{i18n>notfound}"
+		search="_handleValueHelpSearchEmployee" confirm="_handleValueHelpCloseEmployee" cancel="_handleValueHelpCloseEmployee">
+		<StandardListItem title="{EmployeeName}" description="{EmployeeId}" iconDensityAware="false" iconInset="false" type="Active"/>
+	</SelectDialog>
+</core:FragmentDefinition>

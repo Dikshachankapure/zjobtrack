@@ -1,0 +1,24 @@
+{
+	"StorageLocations": [{
+		"SLocId": "10",
+		"PlantId": "101",
+		"SLocName": "Storage Loc 1"
+	}, {
+		"SLocId": "20",
+		"PlantId": "102",
+		"SLocName": "Storage Loc 2"
+	}, {
+		"SLocId": "30",
+		"PlantId": "103",
+		"SLocName": "Storage Loc 3"
+	}, {
+		"SLocId": "40",
+		"PlantId": "104",
+		"SLocName": "Storage Loc 4"
+	}, {
+		"SLocId": "50",
+		"PlantId": "105",
+		"SLocName": "Storage Loc 5"
+	}]
+
+}

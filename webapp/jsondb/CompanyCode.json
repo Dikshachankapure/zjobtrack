@@ -1,0 +1,19 @@
+{
+	"CompanyCodes": [{
+		"CompanyCode": "1001",
+        "CompanyName": "Company 1"
+    },{
+    	"CompanyCode": "1002",
+        "CompanyName": "Company 2"
+    },{
+    	"CompanyCode": "1003",
+        "CompanyName": "Company 3"
+    },{
+    	"CompanyCode": "1004",
+        "CompanyName": "Company 4"
+    },{
+    	"CompanyCode": "1005",
+        "CompanyName": "Company 5"
+    }]
+    
+ }

@@ -1,0 +1,117 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="project.ZTrackJob.controller.TrackJobs"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:tnt="sap.tnt" xmlns:l="sap.ui.layout"
+	xmlns:fb="sap.ui.comp.filterbar">
+	<App>
+		<pages>
+			<Page title="Track Jobs" navButtonPress="_onNavBack" showNavButton="true">
+				<content>
+					<tnt:ToolHeader>
+						<Button text="Dashboard" icon="sap-icon://bbyd-dashboard" type="Transparent" press="_onPressMenu">
+							<layoutData>
+								<OverflowToolbarLayoutData priority="Low"/>
+							</layoutData>
+						</Button>
+						<Button text="Manage Machine" icon="sap-icon://machine" type="Transparent" press="_onPressMenu">
+							<layoutData>
+								<OverflowToolbarLayoutData priority="Low"/>
+							</layoutData>
+						</Button>
+						<Button text="Manage Jobs" icon="sap-icon://legend" type="Transparent" press="_onPressMenu">
+							<layoutData>
+								<OverflowToolbarLayoutData priority="Low"/>
+							</layoutData>
+						</Button>
+						<Button text="Track Jobs" icon="sap-icon://inspection" type="Transparent" press="_onPressMenu">
+							<layoutData>
+								<OverflowToolbarLayoutData priority="Low"/>
+							</layoutData>
+						</Button>
+					</tnt:ToolHeader>
+					<l:VerticalLayout width="100%">
+						<fb:FilterBar reset="onReset" search="onSearch" showRestoreButton="true" showClearButton="true">
+							<fb:filterItems>
+								<fb:FilterItem name="A" label="Date">
+									<fb:control>
+										<DatePicker id="dpkDate" valueFormat="dd/MM/yyyy" displayFormat="short"/>
+									</fb:control>
+								</fb:FilterItem>
+								<fb:FilterItem name="B" label="Status" labelTooltip="Status">
+									<fb:control>
+										<ComboBox id="cmbStatus">
+											<items>
+												<core:Item key="ONGOING" text="ONGOING"/>
+												<core:Item key="UPCOMING" text="UPCOMING"/>
+												<core:Item key="COMPLETED" text="COMPLETED"/>
+												<core:Item key="CANCELLED" text="CANCELLED"/>
+											</items>
+										</ComboBox>
+									</fb:control>
+								</fb:FilterItem>
+							</fb:filterItems>
+						</fb:FilterBar>
+					</l:VerticalLayout>
+					<Table id="tblJobs" inset="false" visible="true" class="sapUiResponsiveMargin" growing="true" growingScrollToLoad="true" width="auto"
+						growingThreshold="10" items="{path:'/Jobs'}" noDataText="{i18n>nodatafound}">
+						<headerToolbar>
+							<Toolbar>
+								<Title text="List of Jobs" level="H2"/>
+							</Toolbar>
+						</headerToolbar>
+						<columns>
+							<Column demandPopin="true">
+								<Text text="Job Id"/>
+							</Column>
+							<Column demandPopin="true">
+								<Text text="Job Title"/>
+							</Column>
+							<Column demandPopin="true" minScreenWidth="Tablet">
+								<Text text="Company"/>
+							</Column>
+							<Column demandPopin="true" minScreenWidth="Tablet">
+								<Text text="Plant"/>
+							</Column>
+							<Column demandPopin="true" minScreenWidth="Tablet">
+								<Text text="Storage Location"/>
+							</Column>
+							<Column demandPopin="true" minScreenWidth="Tablet">
+								<Text text="Employee"/>
+							</Column>
+							<Column demandPopin="true" minScreenWidth="Tablet">
+								<Text text="Machine"/>
+							</Column>
+							<Column demandPopin="true" minScreenWidth="Tablet">
+								<Text text="Date"/>
+							</Column>
+							<Column demandPopin="true" minScreenWidth="Tablet">
+								<Text text="Time"/>
+							</Column>
+							<Column demandPopin="true" hAlign="Center" minScreenWidth="Tablet">
+								<Text text="Status"/>
+							</Column>
+							<Column demandPopin="true" hAlign="End">
+								<Text text=""/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem vAlign="Middle">
+								<cells>
+									<Text text="{JobId}"/>
+									<Text text="{JobTitle}"/>
+									<Text text="{CompanyId}"/>
+									<Text text="{PlantName}"/>
+									<Text text="{SLocName}"/>
+									<Text text="{EmployeeName}"/>
+									<Text text="{MachineName}"/>
+									<Text text="{AssignedDate}"/>
+									<Text text="{FromTime} - {ToTime}"/>
+									<MessageStrip type="{Type}" text="{Status}" class="sapUiMediumMarginBottom"></MessageStrip>
+									<Button id="btnCancel" icon="sap-icon://sys-cancel" press="onCancel" type="Reject" tooltip="Cancel"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

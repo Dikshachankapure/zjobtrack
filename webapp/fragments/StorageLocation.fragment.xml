@@ -1,0 +1,6 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog title="{i18n>select}" items="{ path: '/StorageLocations' }" noDataText="{i18n>notfound}"
+		search="_handleValueHelpSearchStorageLocation" confirm="_handleValueHelpCloseStorageLocation" cancel="_handleValueHelpCloseStorageLocation">
+		<StandardListItem title="{SLocName}" description="{SLocId}" iconDensityAware="false" iconInset="false" type="Active"/>
+	</SelectDialog>
+</core:FragmentDefinition>

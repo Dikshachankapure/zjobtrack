@@ -1,0 +1,214 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "project.ZTrackJob",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.40.12"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"flexEnabled": false,
+		"rootView": {
+			"viewName": "project.ZTrackJob.view.Dashboard",
+			"type": "XML",
+			"async": true,
+			"id": "Dashboard"
+		},
+		"dependencies": {
+			"minUI5Version": "1.60.1",
+			"libs": {
+				"sap.ui.layout": {},
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "project.ZTrackJob.i18n.i18n"
+				}
+			},
+			"CompanyCodeSet": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"uri": "jsondb/CompanyCode.json",
+				"preload": false
+			},
+			"EmployeeSet": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"uri": "jsondb/Employee.json",
+				"preload": false
+			},
+			"PlantSet": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"uri": "jsondb/Plant.json",
+				"preload": false
+			},
+			"StorageLocationSet": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"uri": "jsondb/StorageLocation.json",
+				"preload": false
+			},
+			"MachineSet": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"uri": "jsondb/Machine.json",
+				"preload": false
+			},
+			"JobSet": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"uri": "jsondb/Job.json",
+				"preload": false
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "project.ZTrackJob.view",
+				"controlAggregation": "pages",
+				"controlId": "app",
+				"clearControlAggregation": false
+			},
+			"routes": [
+				{
+					"name": "Dashboard",
+					"pattern": "Dashboard",
+					"target": [
+						"Dashboard"
+					]
+				},
+				{
+					"name": "AddMachine",
+					"pattern": "addmachine",
+					"target": [
+						"AddMachine"
+					]
+				},
+				{
+					"name": "EditMachine",
+					"pattern": "editmachine/{MachineId}",
+					"target": [
+						"EditMachine"
+					]
+				},
+				{
+					"name": "ManageMachine",
+					"pattern": "managemachine",
+					"target": [
+						"ManageMachine"
+					]
+				},
+				{
+					"name": "AddJob",
+					"pattern": "addjob",
+					"target": [
+						"AddJob"
+					]
+				},
+				{
+					"name": "EditJob",
+					"pattern": "editjob/{JobId}",
+					"target": [
+						"EditJob"
+					]
+				},
+				{
+					"name": "ManageJobs",
+					"pattern": "managejobs",
+					"target": [
+						"ManageJobs"
+					]
+				},
+				{
+					"name": "TrackJobs",
+					"pattern": "trackjobs",
+					"target": [
+						"TrackJobs"
+					]
+				}
+			],
+			"targets": {
+				"Dashboard": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewName": "Dashboard"
+				},
+				"AddMachine": {
+					"viewType": "XML",
+					"viewName": "AddMachine"
+				},
+				"EditMachine": {
+					"viewType": "XML",
+					"viewName": "AddMachine"
+				},
+				"ManageMachine": {
+					"viewType": "XML",
+					"viewName": "ListMachine"
+				},
+				"AddJob": {
+					"viewType": "XML",
+					"viewName": "AddJob"
+				},
+				"EditJob": {
+					"viewType": "XML",
+					"viewName": "AddJob"
+				},
+				"ManageJobs": {
+					"viewType": "XML",
+					"viewName": "ListJob"
+				},
+				"TrackJobs": {
+					"viewType": "XML",
+					"viewName": "TrackJobs"
+				}
+			}
+		}
+	},
+	"sap.platform.hcp": {
+		"uri": "webapp",
+		"_version": "1.1.0"
+	}
+}
